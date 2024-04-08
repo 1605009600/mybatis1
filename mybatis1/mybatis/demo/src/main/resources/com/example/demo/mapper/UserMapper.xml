@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <!-- 查询所有用户 -->
+    <select id="selectAll" resultType="com.example.demo.entity.User" flushCache="true">
+        SELECT * FROM sso_account
+    </select>
+
+<insert id="into"  flushCache="true">
+    insert into sso_account(Id,Name,LoginName,Password,Phone,Emile,Valid,Create_Time,Modify_Time)
+values (6,"新","888888","111111","9999999999","2271460318@qq.com",true,Now(),now());
+
+</insert>
+    <update id="updateuser" flushCache="true">
+        update  sso_account
+set
+    Name="小江"
+where Id=6
+
+    </update>
+    <delete id="deleteuser" flushCache="true">
+        delete from sso_account
+where Id=2
+    </delete>
+</mapper>
+
